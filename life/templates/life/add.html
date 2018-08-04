@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-		<title>Index</title>
+		<title>Add</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static '/life/vendor/bootstrap/css/bootstrap.css' %}" />
@@ -15,6 +15,12 @@
 	</head>
 	<body>
 		<!-- Your layout here -->
+    <form action="#" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+  
 
 	</body>
 </html>

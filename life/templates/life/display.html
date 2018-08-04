@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Display</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/life/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/life/css/main.css' %}" />
+
+		<script src="{% static '/life/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/life/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+	</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="column">Date</div>
+                <div class="column">Aircraft</div>
+                <div class="column">Route</div>
+                <div class="column">Duration</div>
+                <div class="column">Landings</div>
+            </div>
+            {% for flight in flights %}
+            <div class="row">
+                <div class="column">{{ flight.date }}</div>
+                <div class="column">{{ flight.aircraft }}</div>
+                <div class="column">{{ flight.route }}</div>
+                <div class="column">{{ flight.duration }}</div>
+                <div class="column">{{ flight.landings }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
